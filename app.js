@@ -32,6 +32,9 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: "The Server Error Here" });
   }
 });
+app.use("/",(req,res)=>{
+  res.status(200).json("API get Successful")
+})
 
 
 // request rate limiting
