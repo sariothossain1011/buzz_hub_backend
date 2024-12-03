@@ -30,21 +30,8 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: "The Server Error Here" });
   }
 });
-app.use("/",(req,res)=>{
-  res.status(200).json("API get Successful")
-})
 
 
-// request rate limiting
-// const limiter = rateLimit({
-//   windowMs: 15 * 60 * 1000, // 15 minutes
-//   max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
-//   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-//   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-// });
-// app.use(limiter);
-
-// routes middleware
 
 readdirSync("./routes").map((r) =>
   app.use("/api/v1", require(`./routes/${r}`))
