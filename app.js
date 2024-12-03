@@ -7,7 +7,6 @@ dotenv.config({ path: "./config.env" });
 
 // SECURITY MIDDLEWARE
 const cors = require("cors");
-// const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const xssClean = require("xss-clean");
 const expressMongoSanitize = require("express-mongo-sanitize");
