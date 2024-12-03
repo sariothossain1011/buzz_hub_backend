@@ -9,10 +9,9 @@ dotenv.config({ path: "./config.env" });
 const cors = require("cors");
 // const helmet = require("helmet");
 const bodyParser = require("body-parser");
-// const xssClean = require("xss-clean");
-// const expressMongoSanitize = require("express-mongo-sanitize");
-// const rateLimit = require("express-rate-limit");
-// const hpp = require("hpp");
+const xssClean = require("xss-clean");
+const expressMongoSanitize = require("express-mongo-sanitize");
+const hpp = require("hpp");
 const ErrorHandler = require("./Middleware/ErrorHandler");
 
 
@@ -20,10 +19,9 @@ const ErrorHandler = require("./Middleware/ErrorHandler");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
-// app.use(xssClean());
-// app.use(expressMongoSanitize());
-// app.use(helmet());
-// app.use(hpp());
+app.use(xssClean());
+app.use(expressMongoSanitize());
+app.use(hpp());
 
 
 app.use(ErrorHandler)
