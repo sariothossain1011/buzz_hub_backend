@@ -11,7 +11,7 @@ const bodyParser = require("body-parser");
 const xssClean = require("xss-clean");
 const expressMongoSanitize = require("express-mongo-sanitize");
 const hpp = require("hpp");
-const ErrorHandler = require("./Middleware/ErrorHandler");
+const ErrorHandler = require("./middleware/ErrorHandler");
 
 
 //security middleware implement
