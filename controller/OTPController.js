@@ -1,7 +1,7 @@
 const OTPModel = require("../models/OTPModel");
-const UserModel = require("../models/UserModel");
+const UserModel = require("../models/OTPModel");
 const bcrypt = require('bcrypt');
-const SendEmailUtility = require("../utility/SendOTPEmail");
+const SendOTPEmail = require("../utility/SendOTPEmail");
 
 
 exports.RecoverVerifyEmail = async(req,res)=>{
@@ -14,7 +14,7 @@ exports.RecoverVerifyEmail = async(req,res)=>{
             // OTP insert
             await OTPModel.create({email: email, otp: OTPCode})
             // send email
-            let SendEmail = await SendEmailUtility(email," Your PIN Code is-" + OTPCode,"BUZZ HUB APPS PIN Verification " )
+            let SendEmail = await SendOTPEmail(email," Your PIN Code is-" + OTPCode,"BUZZ HUB APPS PIN Verification " )
             return res.status(200).json({status:"success",data:SendEmail})
         }else{
             res.status(400).json({status:"No User Found",})

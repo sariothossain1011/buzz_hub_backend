@@ -22,6 +22,9 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: [true, "Price is required!"],
     },
+    discountPrice: {
+      type: String,
+    },
     productCode: {
       type: String,
       required: [true, "product Code is required!"],

@@ -1,14 +1,12 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const SendEmailUtility =async(EmailTo,EmailText,EmailSubject)=>{
+const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
 
     let transporter = nodemailer.createTransport({
         host: 'smtp-mail.outlook.com',
         port: 587,
         secure:false,
         auth:{
-            // user: 'sariothossainweb1011@outlook.com',
-            // pass: 'sariot1011webtest',
             user: process.env.EMAIL_USER, // Set in .env
             pass: process.env.EMAIL_PASS, // Set in .env
         },
@@ -28,7 +26,7 @@ const SendEmailUtility =async(EmailTo,EmailText,EmailSubject)=>{
 
 
 
-module.exports = SendEmailUtility
+module.exports = SendOTPEmail
 
 
 
