@@ -6,7 +6,6 @@ exports.RequireSignIn = (req, res, next) => {
     const token = tmp && tmp.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     req.user = decoded;
-    console.log(req.user)
     next();
   } catch (error) {
     return res.status(500).json({ message: error.message });

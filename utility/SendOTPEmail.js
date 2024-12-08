@@ -5,10 +5,11 @@ const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
     let transporter = nodemailer.createTransport({
         host: 'smtp-mail.outlook.com',
         port: 587,
-        secure:false,
+        // port: 465,
+        // secure:true,
         auth:{
-            user: process.env.EMAIL_USER, // Set in .env
-            pass: process.env.EMAIL_PASS, // Set in .env
+            user: "sariothossainweb1011@outlook.com", // Set in .env
+            pass: "sariot1011web%test", // Set in .env
         },
         tls: {
             rejectUnauthorized: false,
@@ -16,7 +17,7 @@ const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
     })
     
     let mailOptions = {
-        from:'Buzz Hub App <sariothossainweb1011@outlook.com>',
+        from:'Buzz Hub App <buzzhab@gmail.com>',
         to: EmailTo,
         subject: EmailSubject,
         text:EmailText,
@@ -27,6 +28,37 @@ const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
 
 
 module.exports = SendOTPEmail
+
+
+// const nodemailer = require('nodemailer');
+
+// const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
+
+//     let transporter = nodemailer.createTransport({
+//         service: 'Gmail',
+//         auth:{
+//             user: 'sariothossain.me@gmail.com',
+//             pass: 'sa.me#@co',
+//         },
+//     })
+    
+//     let mailOptions = {
+//         from:' TASK MANAGER <sariothossain.me@gmail.com>',
+//         to: EmailTo,
+//         subject: EmailSubject,
+//         text:EmailText,
+//     }
+//     return await transporter.sendMail(mailOptions);
+// }
+
+
+
+// module.exports = SendOTPEmail
+
+
+
+
+
 
 
 

@@ -83,3 +83,18 @@ exports.Login = async (req, res) => {
     return res.status(400).json({ success: false, message: error });
   }
 };
+
+
+exports.UserInfo = async (req, res) => {
+  try {
+    const user = await UserModel.findOne({ _id: req.user.id });
+    if(user){
+      return res.status(200).json({ success: true, message: user });
+    }else{
+      return res.status(400).json({ success: false, message: "User not found" });
+    }
+
+  } catch (error) {
+    return res.status(400).json({ success: false, message: error });
+  }
+}

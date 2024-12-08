@@ -1,5 +1,5 @@
 const OTPModel = require("../models/OTPModel");
-const UserModel = require("../models/OTPModel");
+const UserModel = require("../models/UserModel");
 const bcrypt = require('bcrypt');
 const SendOTPEmail = require("../utility/SendOTPEmail");
 
