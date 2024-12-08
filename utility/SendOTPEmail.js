@@ -3,17 +3,18 @@ require('dotenv').config();
 const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
 
     let transporter = nodemailer.createTransport({
-        host: 'smtp-mail.outlook.com',
-        port: 587,
-        // port: 465,
-        // secure:true,
+        // host: 'smtp-mail.outlook.com',
+        // port: 587,
+        // // port: 465,
+        // // secure:true,
+        host: 'smtp.gmail.com',
+        port: 465,
+        service: 'gmail',
+        secure: true,
         auth:{
-            user: "sariothossainweb1011@outlook.com", // Set in .env
-            pass: "sariot1011web%test", // Set in .env
+            user: "iamjim136@gmail.com", // Set in .env
+            pass: "scgu bzys nfsx mkow", // Set in .env
         },
-        tls: {
-            rejectUnauthorized: false,
-        }
     })
     
     let mailOptions = {
