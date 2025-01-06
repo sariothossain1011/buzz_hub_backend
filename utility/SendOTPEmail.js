@@ -6,7 +6,7 @@ const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
         host: 'smtp.gmail.com',
         port: 465,
         service: 'gmail',
-        secure: true,
+        secure: false,
         auth:{
             user: 'sariot.zorgitgroup@gmail.com',
             pass: 'bpxk dble hldx sbyh'
