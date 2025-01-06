@@ -8,8 +8,8 @@ const SendOTPEmail =async(EmailTo,EmailText,EmailSubject)=>{
         service: 'gmail',
         secure: true,
         auth:{
-            user: "iamjim136@gmail.com", // Set in .env
-            pass: "scgu bzys nfsx mkow", // Set in .env
+            user: 'sariot.zorgitgroup@gmail.com',
+            pass: 'bpxk dble hldx sbyh'
         },
     })
     
